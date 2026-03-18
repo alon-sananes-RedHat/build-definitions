@@ -91,7 +91,7 @@ spec:
     workingDir: $(workspaces.source.path)/source
   - name: build-sbom
     workingDir: $(workspaces.source.path)
-    image: quay.io/konflux-ci/mobster:1.1.0-1772526938@sha256:bf18a2de62a9da3174f1cf4cb8495d971ed4cb43b659348a5ccf8839bbcd8e6a
+    image: quay.io/konflux-ci/mobster:1.1.0-1773847568@sha256:779beb8d8d6c79e0491baefe4d6fba1ed01c9d8c15d023d84fd0769bd51dc8fc
     env:
       - name: SRC_PATH
         value: $(params.SRC_PATH)
@@ -112,7 +112,7 @@ spec:
         --url "$url" --package-pullspec "$(cat "$(results.IMAGE_REF.path)")" --package-digest "$(cat "$(results.IMAGE_DIGEST.path)")"
   - name: push-sbom
     workingDir: $(workspaces.source.path)
-    image: quay.io/konflux-ci/task-runner:1.4.1@sha256:d9feec6f2ce9b10cfb76b45ea14f83b5ed9f231de7d6083291550aebe8eb09ea
+    image: quay.io/konflux-ci/task-runner:1.5.0@sha256:200019314a50be5b6dd06f362c794c92a700583a522c5eee9a41e3eab7f706c5
     env:
       - name: DST_URL
         value: $(params.DST_URL)
