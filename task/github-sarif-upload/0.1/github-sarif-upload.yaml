@@ -62,7 +62,7 @@ spec:
         value: $(params.image-digest)
   steps:
     - name: validate-inputs
-      image: quay.io/konflux-ci/konflux-test:v1.4.50@sha256:8b9c7be18bef49f60ac9926830174072cc2010c620c7b3d0a5bb53ba02fcf71d
+      image: quay.io/konflux-ci/konflux-test:v1.4.52@sha256:deabe80a01dca3a8a0edb709324e30cbf0baa176f7a181bbb695323f506f7aac
       workingDir: /var/workdir
       script: |
         #!/usr/bin/env bash
@@ -89,7 +89,7 @@ spec:
         echo "[$(date --utc -Ins)] Input validation completed successfully"
 
     - name: discover-and-pull-sarif-artifacts
-      image: quay.io/konflux-ci/oras:latest@sha256:180b50c7be50c20e3349a79df8dd6062fee0e0dd01aa30e9a09d1d07d9ebd0c2
+      image: quay.io/konflux-ci/oras:latest@sha256:a24785126ef20a631354f3ee0cb1ca3f75f7c7013b778e901a8983f6cc9a8390
       workingDir: /var/workdir
       script: |
         #!/usr/bin/env bash
@@ -152,7 +152,7 @@ spec:
         done
 
     - name: upload-sarif
-      image: quay.io/konflux-ci/konflux-test:v1.4.50@sha256:8b9c7be18bef49f60ac9926830174072cc2010c620c7b3d0a5bb53ba02fcf71d
+      image: quay.io/konflux-ci/konflux-test:v1.4.52@sha256:deabe80a01dca3a8a0edb709324e30cbf0baa176f7a181bbb695323f506f7aac
       workingDir: /var/workdir
       script: |
         #!/usr/bin/env bash
