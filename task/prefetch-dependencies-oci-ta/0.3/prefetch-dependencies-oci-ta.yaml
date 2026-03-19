@@ -100,7 +100,7 @@ spec:
         name: workdir
   steps:
     - name: skip-ta
-      image: registry.access.redhat.com/ubi9/ubi-minimal:9.7-1771346502@sha256:c7d44146f826037f6873d99da479299b889473492d3c1ab8af86f08af04ec8a0
+      image: registry.access.redhat.com/ubi9/ubi-minimal:9.7-1773895075@sha256:f225a0f8eb7d258011e1f7c8b025dc7dd155d6ffc66c17cd203dcec88935b455
       env:
         - name: INPUT
           value: $(params.input)
@@ -118,7 +118,7 @@ spec:
           echo -n "" >"$(results.CACHI2_ARTIFACT.path)"
         fi
     - name: use-trusted-artifact
-      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:15d7dc86012e41b10d1eb37679ec03ee75c96436224fadd0938a49dc537aa4ad
+      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:27ddb820f0d30609dcb8de88219309edbced429896324e474f494470c2f003fb
       args:
         - use
         - $(params.SOURCE_ARTIFACT)=/var/workdir/source
@@ -187,7 +187,7 @@ spec:
           cpu: "1"
           memory: 3Gi
     - name: create-trusted-artifact
-      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:15d7dc86012e41b10d1eb37679ec03ee75c96436224fadd0938a49dc537aa4ad
+      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:27ddb820f0d30609dcb8de88219309edbced429896324e474f494470c2f003fb
       args:
         - create
         - --store
